@@ -82,7 +82,7 @@ func (list *ArrayList) Delete(index int) error  {
 
 func (list *ArrayList) checkisFull()  {
 	if list.size==cap(list.dataStore){//内存已经使用完
-		newdataStore := make([]interface{},0,2*list.size)
+		newdataStore := make([]interface{},2*list.size) //make中间参数
 		copy(newdataStore,list.dataStore)
 		list.dataStore=newdataStore
 	}
